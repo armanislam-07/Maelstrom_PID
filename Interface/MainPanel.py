@@ -63,7 +63,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.static_panel_width = 316
         print(self.side_panel_width)
         # print(screen_height, screen_width)
-        self.setWindowTitle("TeenyK P&ID")
+        self.setWindowTitle("Maelstrom P&ID")
         # 1003, 1728
         window_x = 0
         window_y = 0
