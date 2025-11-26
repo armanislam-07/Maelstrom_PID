@@ -121,48 +121,11 @@ class MainWindow(QtWidgets.QMainWindow):
         self._solenoids.append(ValveControl("PV-N2-01", "CIO2", 376-11+348, 322-10-30, parent=self))
         self._solenoids.append(ValveControl("PV-FU-01", "CIO2", 588-10+59, 705- 50, parent=self))
 
-        # TODO: Spark plug used to have a custom GUI button - leaving this code here for now in case we go back to it
         # # Label Spark Plug
         self.label = QtWidgets.QLabel("Spark Plug", self)
         self.label.setGeometry(445, 210, 100, 25)
         self.label.setStyleSheet("background-color: #FFFFFF; color: black; font-size: 12pt")
         self.label.setAlignment(Qt.AlignCenter)
-
-        # Pressure Transducers
-        
-        # #TRANSDUCERS for mounted tanks (change the voltage input and output bc i dont know it right now)
-        # self._transducers.append(PressureTransducer("PT-FU-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((287 / self.static_x) * self.scaled_width + self.side_panel_width), int(487 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-N2-07", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((537 / self.static_x) * self.scaled_width + self.side_panel_width), int(239 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-TI-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((752 / self.static_x) * self.scaled_width + self.side_panel_width), int(907 * self.windim_y / self.static_y), self))
-        # self._thermocouples.append(Thermocouple("TC-FU-01", 0, 5, 10000, 1, 0, int((287 / self.static_x) * self.scaled_width + self.side_panel_width), int(517 * self.windim_y / self.static_y), self))
-
-        # #TRANSDUCERS FOR N2/Green Lines
-        # self._transducers.append(PressureTransducer("PT-N2-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1539 / self.static_x) * self.scaled_width + self.side_panel_width), int(269 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-N2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1334 / self.static_x) * self.scaled_width + self.side_panel_width), int(171 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-N2-04", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1033 / self.static_x) * self.scaled_width + self.side_panel_width), int(232 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-N2-05", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1033 / self.static_x) * self.scaled_width + self.side_panel_width), int(263 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-N2-06", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1033 / self.static_x) * self.scaled_width + self.side_panel_width), int(294 * self.windim_y / self.static_y), self))
-
-
-        # # TRANSDUCERS FOR GOX/ Blue Lines
-        # self._transducers.append(PressureTransducer("PT-O2-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1389 / self.static_x) * self.scaled_width + self.side_panel_width), int(340 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-O2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1405 / self.static_x) * self.scaled_width + self.side_panel_width), int(390 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-O2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1130 / self.static_x) * self.scaled_width + self.side_panel_width), int(418 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-N2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1543 / self.static_x) * self.scaled_width + self.side_panel_width), int(462 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-O2-05", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((889 / self.static_x) * self.scaled_width + self.side_panel_width), int(760 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-O2-04", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((715 / self.static_x) * self.scaled_width + self.side_panel_width), int(789 * self.windim_y / self.static_y), self))
-        # self._thermocouples.append(Thermocouple("TC-O2-05", 0, 5, 10000, 1, 0, int((895 / self.static_x) * self.scaled_width + self.side_panel_width), int(821 * self.windim_y / self.static_y), self))
-        # self._thermocouples.append(Thermocouple("TC-O2-04", 0, 5, 10000, 1, 0, int((710 / self.static_x) * self.scaled_width + self.side_panel_width), int(807 * self.windim_y / self.static_y), self))
-
-
-        # #TRANSDUCERS FOR GH2 Yellow Line
-        # self._transducers.append(PressureTransducer("PT-H2-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1450 / self.static_x) * self.scaled_width + self.side_panel_width), int(508 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-H2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1129 / self.static_x) * self.scaled_width + self.side_panel_width), int(545 * self.windim_y / self.static_y), self))
-        # self._transducers.append(PressureTransducer("PT-H2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int((1038 / self.static_x) * self.scaled_width + self.side_panel_width), int(790 * self.windim_y / self.static_y), self))
-        # self._thermocouples.append(Thermocouple("TC-H2-03", 0, 5, 10000, 1, 0, int((1038 / self.static_x) * self.scaled_width + self.side_panel_width), int(813 * self.windim_y / self.static_y), self))
-
-
-
 
 
         # TRANSDUCERS for mounted tanks (change the voltage input and output bc i dont know it right now)
@@ -193,35 +156,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self._transducers.append(PressureTransducer("PT-H2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1038, 790, self))
         self._thermocouples.append(Thermocouple("TC-H2-03", 0, 5, 10000, 1, 0, 1038, 813, self))
 
-
-
-
-
-
-
-
-        # self._transducers.append(PressureTransducer("PT-GG-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int(self.side_panel_width + (428-self.static_panel_width) * self.scaled_width/self.static_width), int(627 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-OX-01", "AIN93", "", 0, 10, 1500, 1, 6.75, int(self.side_panel_width + (428-self.static_panel_width) * self.scaled_width/self.static_width), int(627 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-H2-01", "", "", 0, 6.6, 1500, 1, 0,int(self.side_panel_width + (1383-self.static_panel_width) * self.scaled_width/self.static_width), int(410 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-FU-01", "AIN92", "",0, 10, 1500, 1, 11, int(self.side_panel_width + (528-self.static_panel_width) * self.scaled_width/self.static_width), int(627 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-VT-02", "AIN88", "", 0.5, 2.4, 1500, 1, -6, int(self.side_panel_width + (528-self.static_panel_width) * self.scaled_width/self.static_width), int(528 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-O2-01", "", "", 0, 5, 7500, 1, 0, int(self.side_panel_width + (1300-self.static_panel_width) * self.scaled_width/self.static_width), int(281 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-O2-02", "", "", 0, 5, 10000, 1, 0, int(self.side_panel_width + (1317-self.static_panel_width) * self.scaled_width/self.static_width), int(373 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-O2-03", "", "", 0, 5, 7500, 1, 0, int(self.side_panel_width + (1123-self.static_panel_width) * self.scaled_width/self.static_width), int(374 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-O2-04", "AIN91", "", 0.96, 4.8, 1500, 1, -4.5,  int(self.side_panel_width + (654-self.static_panel_width) * self.scaled_width/self.static_width), int(515 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-VT-01", "AIN89", "", 0.5, 2.4, 1500, 1, -4, int(self.side_panel_width + (528-self.static_panel_width) * self.scaled_width/self.static_width), int(482 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-01", "", "", 0, 5, 10000, 1, 0, int(self.side_panel_width + (1254-self.static_panel_width) * self.scaled_width/self.static_width), int(215 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-02", "", "", 0, 5, 2500, 1, 11.5, int(self.side_panel_width + (1392-self.static_panel_width) * self.scaled_width/self.static_width), int(228 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-03", "AIN73", "", 0, 5, 2500, 1, 11.5, int(self.side_panel_width + (1391-self.static_panel_width) * self.scaled_width/self.static_width), int(382 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-04", "", "", 0, 5, 10000, 1, 0, int(self.side_panel_width + (1121-self.static_panel_width) * self.scaled_width/self.static_width), int(218 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-05", "", "", 0, 5, 10000, 1, 0, int(self.side_panel_width + (1121-self.static_panel_width) * self.scaled_width/self.static_width), int(238 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-06", "", "", 0, 5, 10000, 1, 0, int(self.side_panel_width + (1121-self.static_panel_width) * self.scaled_width/self.static_width), int(259 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-07", "AIN94", "", 0, 10, 1500, 1, 8.7, int(self.side_panel_width + (414-self.static_panel_width) * self.scaled_width/self.static_width), int(76 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-08", "", "", 0, 5, 10000, 1, 0, int(self.side_panel_width + (389-self.static_panel_width) * self.scaled_width/self.static_width), int(454 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-N2-09", "", "", 0, 5, 10000, 1, 0, int(self.side_panel_width + (640-self.static_panel_width) * self.scaled_width/self.static_width), int(541 * self.windim_y/973), self))
-        # self._transducers.append(PressureTransducer("PT-FU-01", "AIN92", "", 0, 10, 1500, 1, 8.5, int(self.side_panel_width + (468-self.static_panel_width) * self.scaled_width/self.static_width), int(500 * self.windim_y/973), self))
-        # self._thermocouples.append(Thermocouple("TC-GG-01", 0, 5, 10000, 1, 0, int(self.side_panel_width + (528-self.static_panel_width) * self.scaled_width/self.static_width), int(691 * self.windim_y/973), self))
-        # self._loadcells.append(LoadCell("LC-TK-01", "", "AIN0", 0.012, 200, 1, 0, int(self.side_panel_width + (328-self.static_panel_width) * self.scaled_width/self.static_width), int(691 * self.windim_y/973), self))
 
         # ___ INITIALIZE DATA LOGGER ___
         # Data Logger
