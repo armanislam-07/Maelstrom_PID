@@ -121,40 +121,40 @@ class MainWindow(QtWidgets.QMainWindow):
         self._solenoids.append(ValveControl("PV-N2-01", "CIO2", 376-11+348, 322-10-30, parent=self))
         self._solenoids.append(ValveControl("PV-FU-01", "CIO2", 588-10+59, 705- 50, parent=self))
 
-        # # Label Spark Plug
-        self.label = QtWidgets.QLabel("Spark Plug", self)
-        self.label.setGeometry(445, 210, 100, 25)
-        self.label.setStyleSheet("background-color: #FFFFFF; color: black; font-size: 12pt")
-        self.label.setAlignment(Qt.AlignCenter)
+        # # # Label Spark Plug (Spark Plug is not included in Maelstorm, but we are keeping this in case for flexibility of other projects)
+        # self.label = QtWidgets.QLabel("Spark Plug", self)
+        # self.label.setGeometry(445, 210, 100, 25)
+        # self.label.setStyleSheet("background-color: #FFFFFF; color: black; font-size: 12pt")
+        # self.label.setAlignment(Qt.AlignCenter)
 
 
         # TRANSDUCERS for mounted tanks (change the voltage input and output bc i dont know it right now)
-        self._transducers.append(PressureTransducer("PT-FU-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 591 , 561 -30, self))
-        self._transducers.append(PressureTransducer("PT-N2-07", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int(537 ), int(239 ), self))
-        self._transducers.append(PressureTransducer("PT-TI-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 752 , 907 , self))
-        self._thermocouples.append(Thermocouple("TC-FU-01", 0, 5, 10000, 1, 0, 591 , 561 , self))
+        self._transducers.append(PressureTransducer("PT-FU-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 591 , 561 -30 + 2, self))
+        self._transducers.append(PressureTransducer("PT-N2-07", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, int(537 -10-9-7-5), int(239 +20 +7), self))
+        self._transducers.append(PressureTransducer("PT-TI-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 752 -15 , 907 , self))
+        self._thermocouples.append(Thermocouple("TC-FU-01", 0, 5, 10000, 1, 0, 591 , 561 - 6 , self))
 
         # TRANSDUCERS FOR N2/Green Lines
-        self._transducers.append(PressureTransducer("PT-N2-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1539, 269, self))
-        self._transducers.append(PressureTransducer("PT-N2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1334, 171, self))
-        self._transducers.append(PressureTransducer("PT-N2-04", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1033, 232, self))
-        self._transducers.append(PressureTransducer("PT-N2-05", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1033, 263, self))
-        self._transducers.append(PressureTransducer("PT-N2-06", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1033, 294, self))
+        self._transducers.append(PressureTransducer("PT-N2-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1539 -10 -15, 269-10 - 10 , self))
+        self._transducers.append(PressureTransducer("PT-N2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1334, 171 -15, self))
+        self._transducers.append(PressureTransducer("PT-N2-04", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1033, 232 -15, self))
+        self._transducers.append(PressureTransducer("PT-N2-05", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1033, 263 -15, self))
+        self._transducers.append(PressureTransducer("PT-N2-06", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1033, 294 -15, self))
 
         # TRANSDUCERS FOR GOX/ Blue Lines
-        self._transducers.append(PressureTransducer("PT-O2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1405, 390, self))
-        self._transducers.append(PressureTransducer("PT-O2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1130, 418, self))
-        self._transducers.append(PressureTransducer("PT-N2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1543, 462, self))
-        self._transducers.append(PressureTransducer("PT-O2-05", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 889, 760, self))
-        self._transducers.append(PressureTransducer("PT-O2-04", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 715, 789, self))
-        self._thermocouples.append(Thermocouple("TC-O2-05", 0, 5, 10000, 1, 0, 895, 821, self))
-        self._thermocouples.append(Thermocouple("TC-O2-04", 0, 5, 10000, 1, 0, 710, 807, self))
+        self._transducers.append(PressureTransducer("PT-O2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1405 +15 +7, 390 +25, self))
+        self._transducers.append(PressureTransducer("PT-O2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1130 -10, 418 -8 -4, self))
+        self._transducers.append(PressureTransducer("PT-N2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1543-9, 462 - 10, self))
+        self._transducers.append(PressureTransducer("PT-O2-05", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 889 -20, 760, self))
+        self._transducers.append(PressureTransducer("PT-O2-04", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 715-15, 789 - 10, self))
+        self._thermocouples.append(Thermocouple("TC-O2-05", 0, 5, 10000, 1, 0, 889-20, 821 - 10, self))
+        self._thermocouples.append(Thermocouple("TC-O2-04", 0, 5, 10000, 1, 0, 715-15, 807 - 7, self))
 
         # TRANSDUCERS FOR GH2 Yellow Line
-        self._transducers.append(PressureTransducer("PT-H2-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1450, 508, self))
-        self._transducers.append(PressureTransducer("PT-H2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1129, 545, self))
-        self._transducers.append(PressureTransducer("PT-H2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1038, 790, self))
-        self._thermocouples.append(Thermocouple("TC-H2-03", 0, 5, 10000, 1, 0, 1038, 813, self))
+        self._transducers.append(PressureTransducer("PT-H2-01", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1450 -7, 508 -10, self))
+        self._transducers.append(PressureTransducer("PT-H2-02", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1129-10 -7, 545-10 -4, self))
+        self._transducers.append(PressureTransducer("PT-H2-03", "AIN90", "", 0.5, 2.4, 1500, 1, 5.5, 1038-10, 790-10, self))
+        self._thermocouples.append(Thermocouple("TC-H2-03", 0, 5, 10000, 1, 0, 1038-10, 813 -7, self))
 
 
         # ___ INITIALIZE DATA LOGGER ___

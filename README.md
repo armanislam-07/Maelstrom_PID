@@ -14,7 +14,6 @@ This application provides a graphical interface for controlling a fluid control 
 - Automated sequencing capability for valve operations
 - Emergency shutdown functionality
 
-
 The P&ID of Maelstrom looks below
 ![P&ID](P&ID.png)
 
@@ -25,7 +24,7 @@ Program Running with the P&ID
 
 - Python 3.14.0
 - PyQt5
-- LabJack T7 device and LJM library [Download Link](https://support.labjack.com/docs/ljm-software-installer-windows) 
+- LabJack T7 device and LJM library [Download Link](https://support.labjack.com/docs/ljm-software-installer-windows)
 - Additional Python libraries: csv, threading, queue, datetime
 
 ## Installation
@@ -40,11 +39,11 @@ Program Running with the P&ID
 
    This will install the necessary dependencies including PyQt5 and LabJack-LJM
 
-   If there is an issue with dependencies use the following commands below: 
-      pip install pyqtgraph
-      pip install labjack-ljm
-      pip install PyQt5-tools
-      pip install PyQt5
+   If there is an issue with dependencies use the following commands below:
+   pip install pyqtgraph
+   pip install labjack-ljm
+   pip install PyQt5-tools
+   pip install PyQt5
 
 ## Running the Application
 
@@ -71,7 +70,7 @@ This will open the fluid panel interface, which is the main entry point for the 
 
 The application opens with one main windows:
 
-1. **TeenyK P&ID** - Main interface showing system diagram with pressure readings
+1. **Maelstrom P&ID** - Main interface showing system diagram with pressure readings
 
 MainPanel.py is where most objects are initialized and the main script operates.
 
@@ -125,6 +124,7 @@ Log files are CSV format with the following columns:
 - State of each valve (True/False)
 
 ## Known Issues
+
     - Some of the Pressure readings are misaligned but this will be fixed in the next update since it's just fixing the numbers
 
 ## Permissions and Hardware Access
